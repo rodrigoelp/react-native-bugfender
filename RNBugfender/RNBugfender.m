@@ -52,6 +52,30 @@ RCT_EXPORT_METHOD(setForceEnabled:(BOOL)enabled) {
     [Bugfender setForceEnabled: enabled];
 }
 
+// Arguments were intentionally flipped to provide a consistent api to the native modules
+RCT_EXPORT_METHOD(setDeviceBoolean:(NSString *)key withValue:(BOOL)value) {
+    [Bugfender setDeviceBOOL: value forKey: key];
+}
+
+// Arguments were intentionally flipped to provide a consistent api to the native modules
+RCT_EXPORT_METHOD(setDeviceInteger:(NSString *)key withValue:(NSNumber *)value) {
+    [Bugfender setDeviceInteger: value.unsignedLongValue forKey:key];
+}
+
+// Arguments were intentionally flipped to provide a consistent api to the native modules
+RCT_EXPORT_METHOD(setDeviceDouble:(NSString *)key withValue:(double)value) {
+    [Bugfender setDeviceDouble: value forKey:key];
+}
+
+// Arguments were intentionally flipped to provide a consistent api to the native modules
+RCT_EXPORT_METHOD(setDeviceString:(NSString *)key withValue:(NSString *)value) {
+    [Bugfender setDeviceString: value forKey: key];
+}
+
+RCT_EXPORT_METHOD(removeDeviceKey:(NSString *)key) {
+    [Bugfender removeDeviceKey: key];
+}
+
 RCT_REMAP_METHOD(deviceIdentifier,
                 resolver:(RCTPromiseResolveBlock)resolve
                 rejecter:(RCTPromiseRejectBlock)reject) {
