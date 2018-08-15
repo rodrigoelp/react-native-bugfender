@@ -70,26 +70,26 @@ declare module "react-native-bugfender" {
      * @param key
      * @param value
      */
-    export function setDeviceBoolean(key: string, value: boolean);
+    export function setDeviceBoolean(key: string, value: boolean): void;
     /**
      * Sets a device detail with number type.
      * @param key
      * @param value
      * @summary setDeviceNumber can map to setDeviceInteger or setDeviceFloat/Double based on the value provided. If the value is a number divisible without remainder is assumed is an integer (uint64)
      */
-    export function setDeviceNumber(key: string, value: number);
+    export function setDeviceNumber(key: string, value: number): void;
     /**
      * Sets a device detail with string type.
      * @param key
      * @param value
      */
-    export function setDeviceString(key: string, value: string);
+    export function setDeviceString(key: string, value: string): void;
 
     /**
      * Remove a device detail assigned to the specified key
      * @param key
      */
-    export function removeDeviceKey(key: string);
+    export function removeDeviceKey(key: string): void;
 
     /**
      * Returns the device identifier used to identify the current device in the Bugfender website.
